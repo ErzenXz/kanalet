@@ -42,7 +42,7 @@
                 <div class="MenuGrup">
                         <a href="account" class="MenuTek">Account</a>
                         <a href="#logout" onclick="logoutOut()" class="MenuTek">Log out</a>
-                        <a href="share.html" onclick="share()" class="MenuTek">Share</a>
+                        <a href="#share" onclick="share()" class="MenuTek">Share</a>
 
                 </div>
 
@@ -142,7 +142,7 @@
                 }
 
                 function share() {
-                        const url = "https://www.blockcraftgg.tk/share";
+                        const url = location.href + "share";
                         window.open(url, "MsgWindow", "width=700,height=500");
                 }
 
