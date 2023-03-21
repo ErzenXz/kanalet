@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>The Materialize Selects Example</title>
+    <meta name="viewport" content="width = device-width, initial-scale = 1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js">
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $('select').material_select();
+        });
+
+        function loadChannel() {
+            var channel = $('select').val()
+            location.replace(channel);
+        }
+    </script>
+</head>
+<br />
+
+<body class="container">
+    <div class="row">
+        <form class="col s12">
+            <div class="row">
+                <label>Zgjedhni Kanalin</label>
+                <select>
+                    <option value="" disabled selected>Kanali?</option>
+                    <option value="rtk">Rtk 1</option>
+                    <option value="rtk3">Rtk 3</option>
+                    <option value="alsatm">Alsat M</option>
+                    <option value="rtsh">Rtsh</option>
+                    <option value="rtshsport">Rtsh Sport</option>
+                    <option value="dukagjini">Dukagjini</option>
+                    <option value="rtv21">Rtv 21</option>
+                    <option value="rtv21junior">Rtv 21 Junior</option>
+                    <option value="rtv21popullore">Rtv 21 Popullore</option>
+                    <option value="tvshenja">Tv Shenja</option>
+                    <option value="t7">T7</option>
+                    <option value="visionplus">Vision Plus</option>
+
+
+
+                </select>
+            </div>
+        </form>
+    </div>
+
+    <a onclick="loadChannel()" class="waves-effect waves-light btn">Go</a>
+
+
+
+</body>
+
+</html>

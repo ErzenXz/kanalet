@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Share</title>
+</head>
+
+<body>
+    <button onclick="shareTwitter()">Share on Twitter</button>
+    <button onclick="shareFacebook()">Share on Facebook</button>
+    <p id="copyme">https://www.blockcraftgg.tk</p>
+</body>
+<script>
+    function shareFacebook() {
+        const urltoshare = window.location.href;
+        const url = `https://www.facebook.com/sharer.php?u=${urltoshare}`
+        window.open(url, "MsgWindow", "width=700,height=500");
+    }
+    function shareTwitter() {
+        const datatoshare1 = window.location.href;
+        const texttoshow1 = "Webfaqja me e mire per shikimin e kanaleve online ";
+        const url1 = `https://twitter.com/intent/tweet?text=${texttoshow1}${datatoshare1}`;
+        window.open(url1, "MsgWindow", "width=700,height=500");
+    }
+
+    function copyLink() {
+        /* Get the text field */
+        var copyText = document.getElementById("copyme");
+
+        /* Select the text field */
+        copyText.select();
+        copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+
+        /* Copy the text inside the text field */
+        document.execCommand("copy");
+    }
+</script>
+<style>
+    #copyme {
+        display: none;
+    }
+
+    body {
+        background-color: darkslategrey;
+    }
+
+    button {
+        background: none;
+        color: lightgrey;
+        width: 250px;
+        height: 80px;
+        border: 2px solid darkcyan;
+        font-size: 18px;
+        border-radius: 4px;
+        transition: .6s;
+        overflow: hidden;
+        text-align: center;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        margin-left: 15px;
+        margin-right: 15px;
+        transition: all 0.5s ease-in-out;
+    }
+
+    button:hover {
+        background: #3d79a1;
+        width: 270px;
+        cursor: pointer;
+        border-radius: 10px;
+    }
+
+    button:focus {
+        border-top-color: #3d79a1;
+        background: #3d79a1;
+        color: #95d5de;
+        outline: none;
+    }
+</style>
+
+</html>

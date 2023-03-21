@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Chat</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+
+<body>
+
+    <div class="main hidden">
+        <ul id="messages" class="messages"></ul>
+        <div class="send">
+            <input id="message" type="text" placeholder="Enter message" autocomplete="off">
+            <button type="submit" value="Send" onclick="sendMessage()"
+                class="waves-effect waves-light btn">Send</button>
+        </div>
+    </div>
+
+    <div class="loader">
+        <div class="preloader-wrapper big active">
+            <div class="spinner-layer spinner-blue">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+
+            <div class="spinner-layer spinner-red">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+
+            <div class="spinner-layer spinner-yellow">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+
+            <div class="spinner-layer spinner-green">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-database.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyDontKPTK-ZEGV-9GzN_RgWDVUQFL6RD-s",
+            authDomain: "chat-with-friends-cf2b4.firebaseapp.com",
+            databaseURL: "https://chat-with-friends-cf2b4.firebaseio.com",
+            projectId: "chat-with-friends-cf2b4",
+            storageBucket: "chat-with-friends-cf2b4.appspot.com",
+            messagingSenderId: "235694693179",
+            appId: "1:235694693179:web:5393f2b4a554776d90351e"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+
+    <script defer src="chat.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+    <script>
+        let log = console.log;
+        // checks if the user is signed in
+        firebase.auth().onAuthStateChanged(function (user) {
+            if (user) {
+                // User is signed in.
+                log("User is logged in!");
+
+            } else {
+                // No user is signed in
+                // redirects the user to login page
+
+                log("User is not logged in!")
+            }
+        });
+
+        function logoutOut() {
+            // Log out
+            firebase.auth().signOut();
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+// Function to reset the password
+function forgotPass() {
+    var auth = firebase.auth();
+    var response_email = prompt("Whats your email?");
+    var emailAddress = response_email;
+
+    auth
+        .sendPasswordResetEmail(emailAddress)
+        .then(function () {
+            // Email sent.
+            Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "Email has been send!",
+                showConfirmButton: false,
+                timer: 1500
+            });
+        })
+        .catch(function (error) {
+            // An error happened.
+            Swal.fire({
+                position: "top-end",
+                icon: "error",
+                title: "Error : " + error.message,
+                showConfirmButton: false,
+                timer: 1500
+            });
+        });
+    var response_email = " ";
+}

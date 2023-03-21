@@ -1,0 +1,75 @@
+/*
+
+    const banned = ["kari", "pidhi", "mut", "kali", "fuck", "dick", "leshi", "cica", "sperm", "kurva", "kurv", "bitch", "karuc", "ta qi nanen", "ti qi ropt"];
+
+    if (spamUuid > 7) {
+        Swal.fire(
+            'Hello!',
+            'You have been blocked for spamming',
+            'error'
+        );
+        let t = new Date();
+
+        timeBlocked = t.getTime();
+        localStorage.setItem("spam-uuid-a-b-c-d", timeBlocked);
+        console.log(timeBlocked);
+        return false;
+    }
+
+    var a = new Date();
+    var b = a.getTime();
+    var ot = localStorage.getItem("spam-uuid-a-b-c-d");
+    var sct = a - ot;
+
+    if (sct > 5 * 60000) {
+        Swal.fire(
+            'Hello!',
+            'You have been banned for 5 minutes for spamming',
+            'error'
+        );
+        return false;
+    }
+
+
+    let i;
+    var n = message;
+    for (i = 0; i < banned.length; i++) {
+        var n = banned.includes(banned[i]);
+        if (n) {
+            Swal.fire(
+                'Hello!',
+                `Please don't swear in the chat!`,
+                'error'
+            );
+            return false;
+        }
+    }
+
+    */
+
+
+
+
+
+    let messageTime = snapshot.val().time;
+    let n = new Date();
+    let ms = n.getTime();
+
+    let difference = ms - messageTime;
+    let time;
+
+    if (difference < 60000) {
+        time = difference / 1000;
+        time = Math.floor(time);
+        time = time + " seconds ago";
+    } else if (difference < 60 * 60000) {
+        time = difference / 60000;
+        time = Math.floor(time);
+        time = time + " minutes ago";
+    } else if (difference < 24 * 60 * 60000) {
+        time = difference / 60 * 60000;
+        time = Math.floor(time);
+        time = time + " hours ago";
+    }
+
+    cTime = time;

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta charset="UTF-8">
+        <title>Home • Kanalet</title>
+        <!-- Primary Meta Tags -->
+        <meta name="title" content="Shiko Kanalet - Falas">
+        <meta name="description" content="Shiko kanalet tona falas ne gjuhen shqipe">
+        <meta name="keywords"
+                content="RTK , rtk ,rtk1 , rtk2 ,rtk3 , alsat , alsatm , ALSATM , dukagjini , gjirafaVideo , tvmak , kanalet , falsa , free">
+
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://metatags.io/">
+        <meta property="og:title" content="Shiko Kanalet - Falas">
+        <meta property="og:description" content="Shiko kanalet tona falas ne gjuhen shqipe">
+        <meta property="og:image"
+                content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
+
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image">
+        <meta property="twitter:url" content="https://metatags.io/">
+        <meta property="twitter:title" content="Shiko Kanalet - Falas">
+        <meta property="twitter:description" content="Shiko kanalet tona falas ne gjuhen shqipe">
+        <meta property="twitter:image"
+                content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
+        <link rel="stylesheet" type="text/css" href="style-global.css">
+
+</head>
+
+<body>
+
+
+
+
+        <div class="menu">
+                <input type="text" id="kerko" onkeyup="kerko()" value="" placeholder="Kërko Kanale">
+                <div class="MenuGrup">
+                        <a href="account" class="MenuTek">Account</a>
+                        <a href="#logout" onclick="logoutOut()" class="MenuTek">Log out</a>
+                        <a href="#share" onclick="share()" class="MenuTek">Share</a>
+
+                </div>
+
+        </div>
+
+        <div class="mobile-menu">
+                <input type="text" id="kerko-mobile" onkeyup="kerko2()" value="" placeholder="Kërko Kanale">
+                <a href="account" class="MenuTek">Account</a>
+                <a href="#logout" onclick="logoutOut()" class="MenuTek">Log out</a>
+                <a href="#share" onclick="share()" class="MenuTek">Share</a>
+        </div>
+
+
+        <div class="lista">
+
+
+                <a href="tvshenja" class="kanali"><img src="https://cdn-erzen.netlify.app/images-png/tvshenja.png"
+                                class="fotoList" /><span class="emriKanalit">TV SHENJA</span>
+                </a>
+
+
+                <a href="dukagjini" class="kanali"><img src="https://cdn-erzen.netlify.app/images-png/tvdukagjini.png"
+                                class="fotoList" /><span class="emriKanalit">TV DUKAGJINI</span>
+
+                </a>
+
+                <a href="alsatm" class="kanali"><img src="https://tvmak.com/img/tv/alsat-m.png" class="fotoList" /><span
+                                class="emriKanalit">ALSAT-M</span>
+                </a>
+
+                <a href="visionplus" class="kanali"><img src="https://cdn-erzen.netlify.app/images-png/vizionplus.png"
+                                class="fotoList" /><span class="emriKanalit">Vizion Plus</span>
+                </a>
+
+
+                <a href="rtk" class="kanali"><img src="https://cdn-erzen.netlify.app/images-png/rtk1.png"
+                                class="fotoList" /><span class="emriKanalit">RTK 1</span>
+                </a>
+
+                <a href="rtk3" class="kanali"><img src="https://cdn-erzen.netlify.app/images-png/rtk3.png"
+                                class="fotoList" /><span class="emriKanalit">RTK 3</span>
+                </a>
+
+
+                <a href="rtv21popullore" class="kanali"><img
+                                src="https://cdn-erzen.netlify.app/images-png/rtv21popullore.png"
+                                class="fotoList" /><span class="emriKanalit">RTV 21
+                                POPULLORE</span>
+                </a>
+
+                <a href="rtv21junior" class="kanali"><img src="https://cdn-erzen.netlify.app/images-png/rtv21junior.png"
+                                class="fotoList" /><span class="emriKanalit">RTV 21 JUNIOR</span>
+                </a>
+
+                <a href="rtv21" class="kanali"><img src="https://cdn-erzen.netlify.app/images-png/rtv21.png"
+                                class="fotoList" /><span class="emriKanalit">RTV 21</span>
+                </a>
+
+                <a href="t7" class="kanali"><img src="https://cdn-erzen.netlify.app/images-png/t7.jpg"
+                                class="fotoList" /><span class="emriKanalit">T7</span>
+                </a>
+                <a href="rtsh" class="kanali"><img src="https://cdn-erzen.netlify.app/images-png/rtsh.png"
+                                class="fotoList" /><span class="emriKanalit">RTSH 1</span>
+                </a>
+                <a href="rtshsport" class="kanali"><img src="https://cdn-erzen.netlify.app/images-png/rtshsport.png"
+                                class="fotoList" /><span class="emriKanalit">RTSH SPORT</span>
+                </a>
+
+
+
+
+        </div>
+
+        <script>
+
+                function kerko() {
+                        var kerkimi = $("#kerko").val();
+                        jQuery.expr[':'].contains = function (a, i, m) {
+                                return jQuery(a).text().toUpperCase().indexOf(m[3].toUpperCase()) >= 0;
+                        };
+                        $(".emriKanalit").parent('a').hide();
+                        $("span:contains('" + kerkimi + "')").parent('a').show();
+                }
+
+                function kerko2() {
+                        var kerkimi = $("#kerko-mobile").val();
+                        jQuery.expr[':'].contains = function (a, i, m) {
+                                return jQuery(a).text().toUpperCase().indexOf(m[3].toUpperCase()) >= 0;
+                        };
+                        $(".emriKanalit").parent('a').hide();
+                        $("span:contains('" + kerkimi + "')").parent('a').show();
+                }
+
+                function logoutOut() {
+                        // Log out
+                        firebase.auth().signOut();
+                }
+
+                function share() {
+                        const url = "https://www.blockcraftgg.tk/share";
+                        window.open(url, "MsgWindow", "width=700,height=500");
+                }
+
+
+
+        </script>
+        <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+        <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+
+        <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+        <script defer src="https://cdn-erzen.netlify.app/js/jquery.js"></script>
+
+
+        <script>
+                // Initialize Firebase
+                var config =
+                {
+                        apiKey: "AIzaSyDontKPTK-ZEGV-9GzN_RgWDVUQFL6RD-s",
+                        authDomain: "chat-with-friends-cf2b4.firebaseapp.com",
+                        databaseURL: "https://chat-with-friends-cf2b4.firebaseio.com",
+                        projectId: "chat-with-friends-cf2b4",
+                        storageBucket: "chat-with-friends-cf2b4.appspot.com",
+                        messagingSenderId: "235694693179",
+                        appId: "1:235694693179:web:5393f2b4a554776d90351e"
+                };
+                firebase.initializeApp(config);
+
+        </script>
+
+
+        <script>
+                let log = console.log;
+                // checks if the user is signed in
+                firebase.auth().onAuthStateChanged(function (user) {
+                        if (user) {
+                                // User is signed in.
+                                log("User is logged in!");
+
+                        } else {
+                                // No user is signed in
+                                // redirects the user to login page
+                                location.replace('../account');
+                                log("User is not logged in!")
+                        }
+                });
+
+
+
+                $(document).bind("contextmenu", function (e) {
+                        e.preventDefault();
+                        $("#cntnr").css("left", e.pageX);
+                        $("#cntnr").css("top", e.pageY);
+                        // $("#cntnr").hide(100);        
+                        $("#cntnr").fadeIn(200, startFocusOut());
+                });
+
+                function startFocusOut() {
+                        $(document).on("click", function () {
+                                $("#cntnr").hide();
+                                $(document).off("click");
+                        });
+                }
+
+                $("#items > li").click(function () {
+                });
+
+
+                function accountgo() {
+                        location.replace("account");
+                }
+                function termsgo() {
+                        location.replace("https://www.blockcraftgg.tk/old/terms");
+                }
+                function mcgo() {
+                        location.replace("https://www.blockcraftgg.tk/mc");
+                }
+                function paintgo() {
+                        location.replace("https://www.blockcraftgg.tk/paint");
+                }
+                function editorgo() {
+                        location.replace("https://www.blockcraftgg.tk/editor");
+                }
+
+        </script>
+        <div id='cntnr'>
+                <ul id='items'>
+                        <li onclick="accountgo()">Account</li>
+                        <li onclick="logoutOut()">Log out</li>
+                        <li onclick="termsgo()">Terms</li>
+                </ul>
+                <hr />
+                <ul id="items">
+                        <li onclick="share()">Share</li>
+                </ul>
+                <hr />
+                <ul id='items'>
+                        <li onclick="mcgo()">Mc finder</li>
+                        <li onclick="paintgo()">Paint</li>
+                        <li onclick="editorgo()">Code Editor</li>
+
+                </ul>
+        </div>
+
+
+        <div class="fundi">
+                Erzen Team © 2020 | None of these channels are hosted on our website.
+        </div>
+
+</body>
+
+</html>

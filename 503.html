@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>503 Service Unavailable</title>
+</head>
+
+<body>
+    <h1 onclick="error404()">503</h1>
+    <p>Service Unavailable</p>
+    <p>The server cannot handle the request.</p>
+</body>
+
+<style>
+    body {
+        background-color: floralwhite;
+    }
+
+    h1 {
+        font-size: 58px;
+        text-align: center;
+        font-weight: 700;
+        color: crimson;
+        transition: all 0.7s ease-in-out;
+    }
+
+    h1:hover {
+        font-size: 68px;
+        cursor: pointer;
+    }
+
+    p {
+
+        font-size: 24px;
+        text-align: center;
+        font-weight: 100;
+
+    }
+</style>
+
+<script>
+
+
+    function error404() {
+        location.replace('https://en.wikipedia.org/wiki/HTTP_503');
+    }
+
+</script>
+
+</html>
