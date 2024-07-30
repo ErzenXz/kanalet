@@ -1,88 +1,83 @@
 <html>
+   <head>
+      <title id="titles">Account</title>
+      <link rel="stylesheet" href="https://cdn.erzen.tk/css/style-account.css" />
+   </head>
 
-<head>
-    <title id="titles">Account</title>
-    <link rel="stylesheet" href="https://cdn-erzen.netlify.app/css/style-account.css" />
-</head>
+   <body onload="showImage()">
+      <!-- Compiled and minified JavaScript -->
+      <!-- The div that shows when the user is not logged in -->
+      <div id="login_div" class="main-div">
+         <h3>Login to your account</h3>
+         <input type="email" placeholder="Email..." id="email_field" />
+         <input type="password" placeholder="Password..." id="password_field" />
 
-<body onload="showImage()">
+         <button onclick="login()">Login to Account</button>
+         <br />
+         <button onclick="create_account()">Create an account</button>
+         <br />
+         <button id="logingoogle" onclick="signgoogle()">Login with Google</button>
+         <br />
+         <button onclick="forgotPass()">Forgot your password?</button>
 
-    <!-- Compiled and minified JavaScript -->
-    <!-- The div that shows when the user is not logged in -->
-    <div id="login_div" class="main-div">
-        <h3>Login to your account</h3>
-        <input type="email" placeholder="Email..." id="email_field" />
-        <input type="password" placeholder="Password..." id="password_field" />
+         <p id="errors"></p>
+      </div>
+      <!-- The div that shows when the user is logged in -->
+      <div id="user_div" class="loggedin-div">
+         <h3>Account Details</h3>
 
-        <button onclick="login()">Login to Account</button>
-        <br />
-        <button onclick="create_account()">Create an account</button>
-        <br />
-        <button id="logingoogle" onclick="signgoogle()">Login with Google</button>
-        <br />
-        <button onclick="forgotPass()">Forgot your password?</button>
-
-        <p id="errors"></p>
-    </div>
-    <!-- The div that shows when the user is logged in -->
-    <div id="user_div" class="loggedin-div">
-        <h3>Account Details</h3>
-
-        <div class="profile">
+         <div class="profile">
             <div class="profile-left">
-                <p id="user_para" class="animate__animated animate__fadeInRight">Welcome. You're currently logged in.
-                </p>
+               <p id="user_para" class="animate__animated animate__fadeInRight">
+                  Welcome. You're currently logged in.
+               </p>
             </div>
 
             <div class="profile-right">
-                <img onclick="imageInfo()" width="100" height="100" id="image-profile"
-                    src='https://images.unsplash.com/photo-1540206395-68808572332f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=562&q=80'>
+               <img
+                  onclick="imageInfo()"
+                  width="100"
+                  height="100"
+                  id="image-profile"
+                  src="https://images.unsplash.com/photo-1540206395-68808572332f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=562&q=80"
+               />
             </div>
-        </div>
+         </div>
 
+         <button onclick="logout()">Logout</button>
+         <br />
+         <button id="verify_btn" onclick="send_verification()">Send Verification</button>
+         <br />
+         <button onclick="changePassword()">Change Password</button>
+         <br />
+         <button onclick="changeEmail()">Change Email</button>
+         <br />
+         <button onclick="deleteAccount()">Delete Account</button>
+         <br />
+         <button id="tvfalas" onclick="tvFalas()">Shiko TV</button>
 
+         <!--button id="tvfalas" onclick="updateprofile1()">Update Account Info</!--button -->
+      </div>
 
-
-        <button onclick="logout()">Logout</button>
-        <br />
-        <button id="verify_btn" onclick="send_verification()">
-            Send Verification
-        </button>
-        <br />
-        <button onclick="changePassword()">Change Password</button>
-        <br />
-        <button onclick="changeEmail()">Change Email</button>
-        <br />
-        <button onclick="deleteAccount()">Delete Account</button>
-        <br />
-        <button id="tvfalas" onclick="tvFalas()">Shiko TV</button>
-
-        <!--button id="tvfalas" onclick="updateprofile1()">Update Account Info</!--button -->
-    </div>
-
-    <!-- The scripts that connect to the LOGIN SERVICE FIREBASE AUTH -->
-    <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
-    <script>
-        // Initialize Firebase
-        var config = {
+      <!-- The scripts that connect to the LOGIN SERVICE FIREBASE AUTH -->
+      <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+      <script>
+         // Initialize Firebase
+         var config = {
             apiKey: "AIzaSyDontKPTK-ZEGV-9GzN_RgWDVUQFL6RD-s",
             authDomain: "chat-with-friends-cf2b4.firebaseapp.com",
             databaseURL: "https://chat-with-friends-cf2b4.firebaseio.com",
             projectId: "chat-with-friends-cf2b4",
             storageBucket: "chat-with-friends-cf2b4.appspot.com",
             messagingSenderId: "235694693179",
-            appId: "1:235694693179:web:5393f2b4a554776d90351e"
-        };
-        firebase.initializeApp(config);
-    </script>
-    <!-- Connect to index.js to show javascript -->
-    <script defer src="https://cdn-erzen.netlify.app/js/account-js.js"></script>
-    <link href="https://cdn-erzen.netlify.app/fonts/Nunito.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdn-erzen.netlify.app/css/animate.css" />
-    <script defer src="https://cdn-erzen.netlify.app/js/alert.js"></script>
-
-
-
-</body>
-
+            appId: "1:235694693179:web:5393f2b4a554776d90351e",
+         };
+         firebase.initializeApp(config);
+      </script>
+      <!-- Connect to index.js to show javascript -->
+      <script defer src="https://cdn.erzen.tk/js/account-js.js"></script>
+      <link href="https://cdn.erzen.tk/fonts/Nunito.css" rel="stylesheet" />
+      <link rel="stylesheet" href="https://cdn.erzen.tk/css/animate.css" />
+      <script defer src="https://cdn.erzen.tk/js/alert.js"></script>
+   </body>
 </html>
